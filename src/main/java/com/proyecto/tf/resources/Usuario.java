@@ -23,4 +23,5 @@ public class Usuario {
     private String correo;
     @Column(name = "contrasena", length = 50, nullable = false)
     private String password;
+
 }
