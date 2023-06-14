@@ -1,4 +1,4 @@
-package com.proyecto.tf.resources;
+package com.proyecto.tf.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

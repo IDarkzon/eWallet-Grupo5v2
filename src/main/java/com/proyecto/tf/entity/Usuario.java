@@ -1,4 +1,4 @@
-package com.proyecto.tf.resources;
+package com.proyecto.tf.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,5 +23,4 @@ public class Usuario {
     private String correo;
     @Column(name = "contrasena", length = 50, nullable = false)
     private String password;
-
 }
