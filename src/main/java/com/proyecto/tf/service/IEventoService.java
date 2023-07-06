@@ -1,4 +1,4 @@
-package com.proyecto.tf.services;
+package com.proyecto.tf.service;
 
 import com.proyecto.tf.entity.Evento;
 

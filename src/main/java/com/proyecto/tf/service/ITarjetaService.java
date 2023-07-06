@@ -1,7 +1,6 @@
-package com.proyecto.tf.services;
+package com.proyecto.tf.service;
 
 import com.proyecto.tf.entity.Tarjeta;
-import com.proyecto.tf.entity.Usuario;
 
 import java.util.List;
 

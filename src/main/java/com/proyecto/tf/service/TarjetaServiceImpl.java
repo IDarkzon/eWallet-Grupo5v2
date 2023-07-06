@@ -1,8 +1,7 @@
-package com.proyecto.tf.services;
+package com.proyecto.tf.service;
 
 import com.proyecto.tf.entity.Tarjeta;
-import com.proyecto.tf.entity.Usuario;
-import com.proyecto.tf.repositories.TarjetaRepository;
+import com.proyecto.tf.repository.TarjetaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

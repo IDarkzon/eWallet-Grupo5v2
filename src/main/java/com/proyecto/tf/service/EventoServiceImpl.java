@@ -1,7 +1,7 @@
-package com.proyecto.tf.services;
+package com.proyecto.tf.service;
 
 import com.proyecto.tf.entity.Evento;
-import com.proyecto.tf.repositories.EventoRepository;
+import com.proyecto.tf.repository.EventoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

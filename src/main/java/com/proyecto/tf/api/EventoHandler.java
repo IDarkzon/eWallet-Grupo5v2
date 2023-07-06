@@ -1,7 +1,7 @@
 package com.proyecto.tf.api;
 
 import com.proyecto.tf.entity.Evento;
-import com.proyecto.tf.services.IEventoService;
+import com.proyecto.tf.service.IEventoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

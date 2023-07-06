@@ -1,7 +1,7 @@
 package com.proyecto.tf.api;
 
 import com.proyecto.tf.entity.Movimiento;
-import com.proyecto.tf.services.IMovimientoService;
+import com.proyecto.tf.service.IMovimientoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

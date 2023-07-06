@@ -1,7 +1,7 @@
-package com.proyecto.tf.services;
+package com.proyecto.tf.service;
 
 import com.proyecto.tf.entity.Movimiento;
-import com.proyecto.tf.repositories.MovimientoRepository;
+import com.proyecto.tf.repository.MovimientoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

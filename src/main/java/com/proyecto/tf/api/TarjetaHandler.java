@@ -1,7 +1,7 @@
 package com.proyecto.tf.api;
 
 import com.proyecto.tf.entity.Tarjeta;
-import com.proyecto.tf.services.ITarjetaService;
+import com.proyecto.tf.service.ITarjetaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

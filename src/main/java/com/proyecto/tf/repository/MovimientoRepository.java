@@ -1,4 +1,4 @@
-package com.proyecto.tf.repositories;
+package com.proyecto.tf.repository;
 
 import com.proyecto.tf.entity.Movimiento;
 import org.springframework.data.jpa.repository.JpaRepository;

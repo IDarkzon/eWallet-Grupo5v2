@@ -1,7 +1,7 @@
 package com.proyecto.tf.api;
 
 import com.proyecto.tf.entity.Usuario;
-import com.proyecto.tf.services.IUsuarioService;
+import com.proyecto.tf.service.IUsuarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
