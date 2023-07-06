@@ -1,18 +1,26 @@
 package com.proyecto.tf.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import java.sql.Date;
+import java.io.Serializable;
+import java.time.LocalDate;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "evento")
-public class Evento {
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@ToString
+public class Evento implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @Column(name = "id", columnDefinition = "int", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +28,10 @@ public class Evento {
     @Column(name = "nombre", length = 30, nullable = false)
     private String nombre;
     @Column(name = "fecha_programada", columnDefinition = "datetime" , nullable = false)
-    private Date fechaProgramada;
-    @Column(name = "id_usuario", columnDefinition = "int", nullable = false)
-    private int id_usuario;
+    private LocalDate fechaProgramada;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", columnDefinition = "int", nullable = false)
+    @JsonIgnoreProperties({"eventos", "correo", "contrasena", "tarjetas"})
+    private Usuario usuario;
 }

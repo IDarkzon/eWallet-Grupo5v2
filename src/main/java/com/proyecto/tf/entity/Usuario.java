@@ -4,13 +4,21 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+import java.io.Serializable;
+import java.util.List;
+
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@ToString
+public class Usuario implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @Column(name = "id", columnDefinition = "int", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +30,11 @@ public class Usuario {
     @Column(name = "correo", length = 50, nullable = false)
     private String correo;
     @Column(name = "contrasena", length = 50, nullable = false)
-    private String password;
+    private String contrasena;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<Tarjeta> tarjetas;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<Evento> eventos;
 }
