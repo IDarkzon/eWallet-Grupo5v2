@@ -1,5 +1,6 @@
 package com.proyecto.tf.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,8 +34,10 @@ public class Usuario implements Serializable {
     private String contrasena;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usuario")
+    @JsonIgnoreProperties({"usuario", "movimientos", "saldo", "fechaVencimiento", "tipo", "proveedor"})
     private List<Tarjeta> tarjetas;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usuario")
+    @JsonIgnoreProperties({"usuario", "fechaProgramada"})
     private List<Evento> eventos;
 }

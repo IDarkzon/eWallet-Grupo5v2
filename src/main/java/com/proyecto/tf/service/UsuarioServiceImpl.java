@@ -24,6 +24,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 
     @Override
+    public Usuario getUsuario(Integer id) {
+        return usuarioRepository.findById(id).orElseThrow();
+    }
+
+    @Override
     public void delete(int id) {
         Usuario usuarioToDelete = usuarioRepository.findById(id).orElseThrow();
         usuarioRepository.delete(usuarioToDelete);

@@ -8,5 +8,6 @@ public interface IUsuarioService {
 
     public void save(Usuario usuario);
     public List<Usuario> get();
+    public Usuario getUsuario(Integer id);
     public void delete(int id);
 }

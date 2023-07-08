@@ -38,11 +38,12 @@ public class Tarjeta implements Serializable {
     private byte proveedor;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario", columnDefinition = "int", nullable = false)
     @JsonIgnoreProperties({"tarjetas", "correo", "contrasena", "eventos"})
+    @JoinColumn(name = "id_usuario", columnDefinition = "int", nullable = false)
     private Usuario usuario;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_tarjeta")
+    @JsonIgnoreProperties({"tarjeta", "monto", "tipo"})
     private List<Movimiento> movimientos;
 }

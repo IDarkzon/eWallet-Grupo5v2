@@ -4,9 +4,7 @@ import com.proyecto.tf.entity.Usuario;
 import com.proyecto.tf.service.IUsuarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,23 @@ public class UsuarioHandler {
         return ResponseEntity.ok().body(usuarioService.get());
     }
 
+    @GetMapping("/{id}")
+    public Usuario getUsuario(@PathVariable("id") Integer id) {
+        return usuarioService.getUsuario(id);
+    }
 
+    @PostMapping("/add")
+    public void add(@RequestBody Usuario usuario){
+        usuarioService.save(usuario);
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestBody Usuario usuario){
+        usuarioService.save(usuario);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable("id") Integer id) {
+        usuarioService.delete(id);
+    }
 }

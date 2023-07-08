@@ -24,6 +24,11 @@ public class MovimientoServiceImpl implements IMovimientoService {
     }
 
     @Override
+    public Movimiento getMovimiento(Integer id) {
+        return movimientoRepository.findById(id).orElseThrow();
+    }
+
+    @Override
     public void delete(int id) {
         Movimiento movimientoToDelete = movimientoRepository.findById(id).orElseThrow();
         movimientoRepository.delete(movimientoToDelete);

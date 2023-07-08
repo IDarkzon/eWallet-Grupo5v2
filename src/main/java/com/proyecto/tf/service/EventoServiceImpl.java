@@ -24,6 +24,11 @@ public class EventoServiceImpl implements IEventoService {
     }
 
     @Override
+    public Evento getEvento(Integer id) {
+        return eventoRepository.findById(id).orElseThrow();
+    }
+
+    @Override
     public void delete(int id) {
         Evento eventoToDelete = eventoRepository.findById(id).orElseThrow();
         eventoRepository.delete(eventoToDelete);
